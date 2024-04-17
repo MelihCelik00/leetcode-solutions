@@ -6,11 +6,11 @@
 #         self.right = right
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        # # recursive depth-first search
-        # if root is None:
-        #     return 0
+        # recursive depth-first search
+        if root is None:
+            return 0
         
-        # return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right)) # worst case O(n)
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right)) # worst case O(n)
 
         # Breadth First Search (Queue Implementation)
         # if not root:
@@ -30,15 +30,15 @@ class Solution:
         # return level
 
         # Iterative Depth First Search (Stack Implementation)
-        stack = [[root, 1]]
-        res = 0
+        # stack = [[root, 1]]
+        # res = 0
 
-        while stack:
-            node, depth = stack.pop()
+        # while stack:
+        #     node, depth = stack.pop()
 
-            if node:
-                res = max(res, depth)
-                stack.append([node.right, depth+1])
-                stack.append([node.left, depth+1])
+        #     if node:
+        #         res = max(res, depth)
+        #         stack.append([node.right, depth+1])
+        #         stack.append([node.left, depth+1])
         
-        return res
+        # return res
