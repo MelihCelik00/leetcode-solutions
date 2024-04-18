@@ -12,13 +12,13 @@ class Solution:
         if (head.next == None):
             return False
 
-        visited = defaultdict()
+        visited = set()
         curr = head
         while curr:
             if curr.next in visited:
                 return True
             else:
-                visited[curr] = curr.val
+                visited.add(curr)
                 curr = curr.next
         
         return False
